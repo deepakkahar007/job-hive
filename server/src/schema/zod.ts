@@ -1,10 +1,16 @@
 import { z } from "zod";
 
-function add_Days() {
-  const date = new Date();
-  const result = date.setDate(date.getDate() + 5);
-  return result;
-}
+export const RegisterUserSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  password: z.string(),
+  role: z.string(),
+  skills: z.array(z.string()).optional(),
+});
+
+export const OutputRegisterSchema = z.object({
+  status: z.boolean(),
+});
 
 export const CreateJobSchema = z.object({
   title: z.string(),

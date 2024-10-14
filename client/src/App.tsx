@@ -1,12 +1,14 @@
-import { Button } from "./components/ui/button";
+import { JobsCard, SearchBar } from "./components";
+import MaxWidthWrapper from "./components/MaxWidthWrapper";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">job hive </h1>
-
-      <Button>submit shadcn ui {}</Button>
-    </>
+    <main className="mx-5">
+      <MaxWidthWrapper>
+        <SearchBar />
+        <JobsCard />
+      </MaxWidthWrapper>
+    </main>
   );
 }
 
